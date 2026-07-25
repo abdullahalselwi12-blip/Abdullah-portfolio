@@ -1,4 +1,4 @@
-import './globals.css';
+require('./globals.css');
 import type { Metadata } from 'next';
 import { Inter, Playfair_Display, Cairo } from 'next/font/google';
 import { ThemeProvider } from '@/components/providers/theme-provider';
@@ -17,38 +17,96 @@ const playfair = Playfair_Display({
 const cairo = Cairo({ subsets: ['arabic', 'latin'], variable: '--font-arabic', display: 'swap' });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://abdullah-portfolio-puce-theta.vercel.app"),
+
   title: {
-    default: "Abdullah Dia'a Al-Selwi — Cybersecurity & Full Stack Developer",
-    template: "%s — Abdullah Al-Selwi",
+    default: "Abdullah Hassan Saif Al-Selwi | Cybersecurity Engineer",
+    template: "%s | Abdullah Al-Selwi",
   },
+
   description:
-    'Computer Science student, cybersecurity enthusiast, AI researcher, and full-stack developer. Explore projects, skills, certificates, and articles by Abdullah Dia\u2019a Hassan Sief Al-Selwi.',
+    "Official portfolio of Abdullah Hassan Saif Al-Selwi, Computer Science student and Cybersecurity Engineer specializing in penetration testing, network security, AI, IoT security, and full-stack development.",
+
   keywords: [
-    'Abdullah Al-Selwi',
-    'Cybersecurity',
-    'Full Stack Developer',
-    'Computer Science',
-    'Sana\u2019a University',
-    'AI Researcher',
-    'Python Developer',
-    'Portfolio',
+    "Abdullah Al-Selwi",
+    "Abdullah Hassan Saif Al-Selwi",
+    "عبدالله الصلوي",
+    "عبدالله حسن سيف الصلوي",
+    "Cybersecurity Engineer",
+    "Ethical Hacker",
+    "Penetration Tester",
+    "Network Security",
+    "Computer Science",
+    "Full Stack Developer",
+    "Artificial Intelligence",
+    "IoT Security",
+    "Next.js",
+    "Supabase",
+    "Portfolio",
+    "Yemen",
+    "Sana'a University"
   ],
-  authors: [{ name: "Abdullah Dia'a Hassan Sief Al-Selwi" }],
+
+  authors: [
+    {
+      name: "Abdullah Hassan Saif Al-Selwi",
+      url: "https://abdullah-portfolio-puce-theta.vercel.app",
+    },
+  ],
+
+  creator: "Abdullah Hassan Saif Al-Selwi",
+
+  publisher: "Abdullah Hassan Saif Al-Selwi",
+
+  alternates: {
+    canonical: "https://abdullah-portfolio-puce-theta.vercel.app",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+
   openGraph: {
-    title: "Abdullah Dia'a Al-Selwi — Portfolio",
+    type: "website",
+    locale: "en_US",
+    url: "https://abdullah-portfolio-puce-theta.vercel.app",
+    siteName: "Abdullah Portfolio",
+    title: "Abdullah Hassan Saif Al-Selwi",
     description:
-      'Cybersecurity enthusiast, AI researcher, and full-stack developer. Computer Science student at Sana\u2019a University.',
-    type: 'website',
-    locale: 'en_US',
-    alternateLocale: 'ar_YE',
+      "Cybersecurity Engineer | Computer Science Student | Full Stack Developer",
+    images: [
+      {
+        url: "/photo_2026-07-24_23-19-26.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Abdullah Hassan Saif Al-Selwi",
+      },
+    ],
   },
+
   twitter: {
-    card: 'summary_large_image',
-    title: "Abdullah Dia'a Al-Selwi — Portfolio",
+    card: "summary_large_image",
+    title: "Abdullah Hassan Saif Al-Selwi",
     description:
-      'Cybersecurity enthusiast, AI researcher, and full-stack developer.',
+      "Cybersecurity Engineer | Computer Science Student",
+    images: ["/photo_2026-07-24_23-19-26.jpg"],
   },
-  robots: { index: true, follow: true },
+
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
+
+  category: "Technology",
 };
 
 const personSchema = {
