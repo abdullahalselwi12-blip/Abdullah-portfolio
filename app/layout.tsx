@@ -20,18 +20,18 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://abdullah-portfolio-puce-theta.vercel.app"),
 
   title: {
-    default: "Abdullah Hassan Saif Al-Selwi | Cybersecurity Engineer",
+    default: "Abdullah Dia'a Hassan Sief Al-Selwi | Cybersecurity Engineer",
     template: "%s | Abdullah Al-Selwi",
   },
 
   description:
-    "Official portfolio of Abdullah Hassan Saif Al-Selwi, Computer Science student and Cybersecurity Engineer specializing in penetration testing, network security, AI, IoT security, and full-stack development.",
+    "Official portfolio of Abdullah Dia'a Hassan Sief Al-Selwi, Computer Science student and Cybersecurity Engineer specializing in penetration testing, network security, AI, IoT security, and full-stack development.",
 
   keywords: [
     "Abdullah Al-Selwi",
-    "Abdullah Hassan Saif Al-Selwi",
+    "Abdullah Dia'a Hassan Sief Al-Selwi",
     "عبدالله الصلوي",
-    "عبدالله حسن سيف الصلوي",
+    "عبدالله ضياء حسن سيف الصلوي",
     "Cybersecurity Engineer",
     "Ethical Hacker",
     "Penetration Tester",
@@ -49,14 +49,14 @@ export const metadata: Metadata = {
 
   authors: [
     {
-      name: "Abdullah Hassan Saif Al-Selwi",
+      name: "Abdullah Dia'a Hassan Sief Al-Selwi",
       url: "https://abdullah-portfolio-puce-theta.vercel.app",
     },
   ],
 
-  creator: "Abdullah Hassan Saif Al-Selwi",
+  creator: "Abdullah Dia'a Hassan Sief Al-Selwi",
 
-  publisher: "Abdullah Hassan Saif Al-Selwi",
+  publisher: "Abdullah Dia'a Hassan Sief Al-Selwi",
 
   alternates: {
     canonical: "https://abdullah-portfolio-puce-theta.vercel.app",
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://abdullah-portfolio-puce-theta.vercel.app",
     siteName: "Abdullah Portfolio",
-    title: "Abdullah Hassan Saif Al-Selwi",
+    title: "Abdullah Dia'a Hassan Sief Al-Selwi",
     description:
       "Cybersecurity Engineer | Computer Science Student | Full Stack Developer",
     images: [
@@ -87,14 +87,14 @@ export const metadata: Metadata = {
         url: "/photo_2026-07-24_23-19-26.jpg",
         width: 1200,
         height: 630,
-        alt: "Abdullah Hassan Saif Al-Selwi",
+        alt: "Abdullah Dia'a Hassan Sief Al-Selwi",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Abdullah Hassan Saif Al-Selwi",
+    title: "Abdullah Dia'a Hassan Sief Al-Selwi",
     description:
       "Cybersecurity Engineer | Computer Science Student",
     images: ["/photo_2026-07-24_23-19-26.jpg"],
