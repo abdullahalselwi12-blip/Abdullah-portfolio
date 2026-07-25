@@ -10,10 +10,6 @@ import Image from 'next/image';
 
 interface HeroData {
   id: string;
-  name_en: string;
-  name_ar: string;
-  title_en: string;
-  title_ar: string;
   subtitle_en: string;
   subtitle_ar: string;
   greeting_en: string;
@@ -33,6 +29,18 @@ const floatingIcons = [
 
 const DEFAULT_AVATAR = '/photo_2026-07-24_23-19-26.jpg';
 
+// الأسماء الثابتة - لن تتغير من قاعدة البيانات
+const STATIC_NAMES = {
+  en: {
+    firstName: 'Abdullah Dia\'a',
+    lastName: 'Hassan Sief Al-Selwi',
+  },
+  ar: {
+    firstName: 'عبدالله ضياء',
+    lastName: 'حسن سيف الصلوي',
+  },
+};
+
 export function Hero() {
   const { t, lang } = useLanguage();
   const [heroData, setHeroData] = useState<HeroData | null>(null);
@@ -40,6 +48,7 @@ export function Hero() {
   const [displayed, setDisplayed] = useState('');
   const [deleting, setDeleting] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
   useEffect(() => {
     loadHeroData();
@@ -86,8 +95,11 @@ export function Hero() {
   const scrollTo = (id: string) =>
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 
-  const name = heroData ? (lang === 'ar' ? heroData.name_ar : heroData.name_en) : 'Abdullah Dia\'a';
-  const title = heroData ? (lang === 'ar' ? heroData.title_ar : heroData.title_en) : 'Hassan Sief Al-Selwi';
+  // استخدام الأسماء الثابتة من الكود
+  const firstName = lang === 'ar' ? STATIC_NAMES.ar.firstName : STATIC_NAMES.en.firstName;
+  const lastName = lang === 'ar' ? STATIC_NAMES.ar.lastName : STATIC_NAMES.en.lastName;
+  
+  // باقي البيانات من قاعدة البيانات (اختيارية)
   const subtitle = heroData ? (lang === 'ar' ? heroData.subtitle_ar : heroData.subtitle_en) : t.hero.subtitle;
   const greeting = heroData ? (lang === 'ar' ? heroData.greeting_ar : heroData.greeting_en) : t.hero.greeting;
   const avatarUrl = heroData?.avatar_url || DEFAULT_AVATAR;
@@ -121,7 +133,7 @@ export function Hero() {
       ))}
 
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
-        {/* Avatar - الصورة الشخصية بشكل دائري */}
+        {/* Avatar */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -135,30 +147,36 @@ export function Hero() {
           <div className="absolute -inset-2 rounded-full border-2 border-primary/20 animate-spin-slow" />
           <div className="absolute -inset-4 rounded-full border border-primary/10 animate-spin-slower" />
           
-          {/* Image container - دائري بالكامل مع overflow hidden */}
+          {/* Image container */}
           <div className="relative h-full w-full rounded-full overflow-hidden ring-4 ring-primary/20 shadow-2xl bg-muted">
-            <Image
-              src={avatarUrl}
-              alt={name}
-              fill
-              sizes="(max-width: 640px) 128px, (max-width: 1024px) 160px, 192px"
-              className={`
-                object-cover 
-                object-center 
-                transition-opacity 
-                duration-500 
-                ${imageLoaded ? 'opacity-100' : 'opacity-0'}
-              `}
-              style={{
-                objectPosition: 'center center',
-              }}
-              onLoadingComplete={() => setImageLoaded(true)}
-              priority
-              quality={100}
-            />
+            {!imageError ? (
+              <Image
+                src={avatarUrl}
+                alt={firstName}
+                fill
+                sizes="(max-width: 640px) 128px, (max-width: 1024px) 160px, 192px"
+                className={`
+                  object-cover 
+                  object-center 
+                  transition-opacity 
+                  duration-500 
+                  ${imageLoaded ? 'opacity-100' : 'opacity-0'}
+                `}
+                style={{
+                  objectPosition: 'center center',
+                }}
+                onLoadingComplete={() => setImageLoaded(true)}
+                onError={() => setImageError(true)}
+                priority
+                quality={100}
+              />
+            ) : (
+              <div className="w-full h-full bg-gradient-to-br from-primary/20 to-chart-4/20 flex items-center justify-center text-4xl font-bold text-primary/50">
+                {firstName.charAt(0).toUpperCase()}
+              </div>
+            )}
             
-            {/* Loading placeholder */}
-            {!imageLoaded && (
+            {!imageLoaded && !imageError && (
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-chart-4/10 animate-pulse" />
             )}
           </div>
@@ -180,16 +198,16 @@ export function Hero() {
           <span className="text-xs font-medium">{greeting}</span>
         </motion.div>
 
-        {/* Name */}
+        {/* Name - سطرين: الأول الاسم الأول، الثاني الاسم الأخير */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
           className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1]"
         >
-          <span className="gradient-text">{name.split(' ')[0]}</span>
+          <span className="gradient-text">{firstName}</span>
           <br />
-          <span className="text-foreground">{title}</span>
+          <span className="text-foreground">{lastName}</span>
         </motion.h1>
 
         {/* Typing role */}
