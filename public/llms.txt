@@ -1,0 +1,54 @@
+# Abdullah Dia'a Hassan Sief Al-Selwi
+
+Official website:
+https://abdullah-portfolio-puce-theta.vercel.app
+
+Name:
+Abdullah Dia'a Hassan Sief Al-Selwi
+
+Arabic Name:
+عبدالله ضياء حسن سيف الصلوي
+
+Profession:
+Cybersecurity Engineer
+Full Stack Developer
+AI Researcher
+Computer Science Student
+
+Location:
+Sana'a, Yemen
+
+About:
+Abdullah Dia'a Hassan Sief Al-Selwi is a Computer Science student specializing in cybersecurity, full-stack web development, artificial intelligence, and software engineering. His portfolio showcases projects, certifications, technical skills, and research.
+
+Skills:
+- Cybersecurity
+- Penetration Testing
+- Network Security
+- Python
+- JavaScript
+- TypeScript
+- React
+- Next.js
+- Node.js
+- Tailwind CSS
+- PostgreSQL
+- Supabase
+- Artificial Intelligence
+- Linux
+
+Website Sections:
+/
+#/about
+#/projects
+#/certificates
+#/contact
+
+GitHub:
+https://github.com/abdullahalselwi12-blip
+
+Preferred Citation:
+Abdullah Dia'a Hassan Sief Al-Selwi. Official Portfolio.
+
+Last Updated:
+2026
