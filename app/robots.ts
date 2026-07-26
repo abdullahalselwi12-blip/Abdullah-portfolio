@@ -5,9 +5,15 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
+      disallow: [
+        "/admin/",
+        "/api/",
+        "/_next/",
+        "/_vercel/",
+        "/server-sitemap.xml",
+      ],
     },
-
-    sitemap:
-      "https://abdullah-portfolio-puce-theta.vercel.app/sitemap.xml",
+    sitemap: "https://abdullah-portfolio-puce-theta.vercel.app/sitemap.xml",
+    host: "https://abdullah-portfolio-puce-theta.vercel.app",
   };
 }
