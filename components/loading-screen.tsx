@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/components/providers/language-provider';
+import Image from 'next/image';
 
 export function LoadingScreen() {
   const { t } = useLanguage();
@@ -26,8 +27,14 @@ export function LoadingScreen() {
             animate={{ scale: 1, opacity: 1 }}
             className="relative"
           >
-            <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-primary to-chart-4 flex items-center justify-center shadow-2xl shadow-primary/40">
-              <span className="text-white font-bold text-2xl font-display">A</span>
+            <div className="relative h-16 w-16 overflow-hidden rounded-2xl shadow-2xl shadow-primary/40">
+              <Image
+                src="/icon.png"
+                alt="Abdullah Dia'a"
+                fill
+                priority
+                className="object-cover"
+              />
             </div>
             <motion.div
               className="absolute inset-0 rounded-2xl border-2 border-primary"

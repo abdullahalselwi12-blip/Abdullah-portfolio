@@ -6,6 +6,7 @@ import { useLanguage } from '@/components/providers/language-provider';
 import { Button } from '@/components/ui/button';
 import { ArrowUp, Github, Linkedin, Send, Facebook, Instagram, Twitter, Youtube, Globe, Mail } from 'lucide-react';
 import { supabase } from '@/lib/supabase-client';
+import Image from 'next/image';
 
 // خريطة لتحويل أسماء الأيقونات من قاعدة البيانات إلى مكونات Lucide
 const iconMap: Record<string, any> = {
@@ -82,8 +83,14 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2.5 mb-4">
-              <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-primary to-chart-4 flex items-center justify-center shadow-lg shadow-primary/30">
-                <span className="text-white font-bold text-sm font-display">A</span>
+              <div className="relative h-9 w-9 overflow-hidden rounded-xl shadow-lg shadow-primary/30">
+                <Image
+                  src="/icon.png"
+                  alt="Abdullah Dia'a"
+                  fill
+                  priority
+                  className="object-cover"
+                />
               </div>
               <span className="font-display font-bold text-lg">
                 Abdullah<span className="text-primary">.</span>

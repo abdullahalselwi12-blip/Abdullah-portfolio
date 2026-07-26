@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
 import { Sun, Moon, Menu, X, Languages, Monitor } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
 const navLinks = [
   { id: 'home', key: 'home' },
@@ -94,9 +95,15 @@ export function Navbar() {
             className="group flex items-center gap-2.5"
             aria-label="Home"
           >
-            <div className="relative h-9 w-9 rounded-xl bg-gradient-to-br from-primary to-chart-4 flex items-center justify-center shadow-lg shadow-primary/30">
-              <span className="text-white font-bold text-sm font-display">A</span>
-              <div className="absolute inset-0 rounded-xl bg-primary/40 blur-md -z-10 group-hover:blur-lg transition-all" />
+            <div className="relative h-9 w-9 overflow-hidden rounded-xl shadow-lg shadow-primary/30">
+              <Image
+                src="/icon.png"
+                alt="Abdullah Dia'a"
+                fill
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-0 rounded-xl bg-primary/20" />
             </div>
             <span className="hidden sm:block font-display font-bold text-lg tracking-tight">
               Abdullah<span className="text-primary">.</span>
