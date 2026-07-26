@@ -148,7 +148,7 @@ export const metadata: Metadata = {
       "Official portfolio of Abdullah Dia'a Hassan Sief Al-Selwi, Computer Science student, Cybersecurity enthusiast, Full Stack Developer, AI researcher, and software engineer from Yemen.",
     images: [
       {
-        url: "/photo_2026-07-24_23-19-26.jpg",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Abdullah Dia'a Hassan Sief Al-Selwi - Cybersecurity Engineer & Full Stack Developer",
@@ -162,7 +162,7 @@ export const metadata: Metadata = {
     title: "Abdullah Dia'a Hassan Sief Al-Selwi | Cybersecurity Engineer",
     description:
       "Cybersecurity Engineer, Penetration Tester, and Full Stack Developer. Explore my portfolio of AI, security, and web projects.",
-    images: ["/photo_2026-07-24_23-19-26.jpg"],
+    images: ["/og-image.jpg"],
     site: "@AbdullahAlSelwi",
     creator: "@AbdullahAlSelwi",
   },
@@ -227,6 +227,8 @@ const personSchema = {
     "Tailwind CSS",
   ],
   sameAs: [
+    // ⚠️ تأكد من صحة هذه الروابط قبل النشر
+    // إذا لم تكن تملك هذه الحسابات، قم بتغييرها أو حذفها
     "https://github.com/abdullahalselwi",
     "https://linkedin.com/in/abdullahalselwi",
     "https://twitter.com/AbdullahAlSelwi",
