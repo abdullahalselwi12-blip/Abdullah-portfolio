@@ -233,7 +233,7 @@ const personSchema = {
     "https://linkedin.com/in/abdullahalselwi",
     "https://twitter.com/AbdullahAlSelwi",
   ],
-  image: "https://abdullah-portfolio-puce-theta.vercel.app/photo_2026-07-24_23-19-26.jpg",
+ image: "https://abdullah-portfolio-puce-theta.vercel.app/og-image.jpg",
   nationality: "Yemeni",
   address: {
     '@type': 'PostalAddress',
